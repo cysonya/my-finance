@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "ABTasty": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "prettier", "react", "better-styled-components"],
+  "root": true,
+  "rules": {
+    "better-styled-components/sort-declarations-alphabetically": ["error"],
+    "import/newline-after-import": ["error"],
+    "import/no-duplicates": ["error"],
+    "import/no-unresolved": 0,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "react/jsx-sort-props": ["error"],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "semi": ["error", "never"],
+    "sort-keys": ["error"]
+  },
+  "settings": {
+    "import/external-module-folders": ["node_modules"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "app/javascript"]
+      }
+    }
+  }
+}
